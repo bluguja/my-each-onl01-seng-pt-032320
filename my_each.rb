@@ -1,16 +1,15 @@
 
 def my_each(array)
-  array=[1,2,3,4]
-  
+  if block_given?
     i = 0
-    
+ 
     while i < array.length
       yield(array[i])
- 
-    #puts "array is #{yeild}"
-  
-    i+= 1
+      i = i + 1
     end
+ 
+    array
+  else
+    puts "Hey! No block was given!"
   end
-
-
+end
